@@ -7,11 +7,11 @@ public:
         char temp;
         while(left<right)
         {   
-            while(left<right && !isalnum(s[left])){
-                left++;
+            if(!isalnum(s[left])){
+                left++;continue;
             }
-            while(left<right && !isalnum(s[right])){
-                right--;
+            if(!isalnum(s[right])){
+                right--;continue;
             }
             if (tolower(s[left]) != tolower(s[right])){
                 return false;
